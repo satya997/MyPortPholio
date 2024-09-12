@@ -16,12 +16,12 @@ const MyWork = () => {
         {/* {mywork_data.map((work, index) => {
           return <img key={index} className="img" src={work.w_img} alt="" />;
         })} */}
-        <img src="Tomato.png" alt="" />
-        <img src="Portfolio.png" alt="" />
-        <img src="real state.png" alt="" />
-        <img src="shopping app.png" alt="" />
-        <img src="courses.png" alt="" />
-        <img src="shop.png" alt="" />
+        <img src="/Tomato.png" alt="" />
+        <img src="/Portfolio.png" alt="" />
+        <img src="/real state.png" alt="" />
+        <img src="/shopping app.png" alt="" />
+        <img src="" alt="" />
+        <img src="/shop.png" alt="" />
       </div>
       <div className="mywork-showmore">
         <p>Show More</p>

@@ -49,7 +49,7 @@ const Hero = () => {
 
   return (
     <div id="home" className="hero">
-      <img src="satya2.jpg" alt="" />
+      <img src="/satya2.jpg" alt="" />
       <h1>
         <span>I'm Satya Prajapati,</span> MERN stack developer from Noida,
         INDIA.
