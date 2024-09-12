@@ -20,7 +20,7 @@ const MyWork = () => {
         <img src="/Portfolio.png" alt="" />
         <img src="/real state.png" alt="" />
         <img src="/shopping app.png" alt="" />
-        <img src="" alt="" />
+        <img src="/courses.png" alt="" />
         <img src="/shop.png" alt="" />
       </div>
       <div className="mywork-showmore">
