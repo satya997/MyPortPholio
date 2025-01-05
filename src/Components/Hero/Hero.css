@@ -198,8 +198,9 @@
 
     .hero-connect,
     .hero-resume {
-        padding: 15px 25px;
-        border-radius: 30px;
+        padding: 15px 15px;
+        border-radius:10px;
+        font-size: 18px;
     }
 }
 
