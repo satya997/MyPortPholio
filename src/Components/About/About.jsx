@@ -16,7 +16,7 @@ const About = () => {
         <div className="about-right">
           <div className="about-para">
             <p>
-              I am an experienced MERN stack developer with over a decade of
+              I am an experienced MERN stack developer with over a year of
               professional expertise in the field. Throughout my career, I have
               had the privilege of collaborating with prestigious organizations,
               contributing to their success and growth.
