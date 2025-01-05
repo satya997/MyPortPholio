@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="name">Satya Prajapati</div>
           <p>
             I'm a MERN stack developer from noida, INDIA, with 1.5+ years of
-            experience in companies like Agicent and Systaldyn.
+            experience in companies like Systaldyn.
           </p>
         </div>
         <div className="footer-top-right">

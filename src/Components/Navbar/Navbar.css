@@ -1,110 +1,202 @@
-.navbar{
+/* Default styles for larger screens */
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px 170px;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
-    gap:60px;
+    gap: 60px;
     font-size: 20px;
 }
 
-/* .navbar .name{
- font-size: 35px;
- border: 3px dashed rgb(176, 126, 136);
-border-radius:5px;
-padding: 5px;
-}
-
-.navbar .name:hover{
-    transform: scale(0.5) 1s;
-    cursor: pointer;
-} */
-
-.name{
+.name {
     font-size: 50px;
-    background: linear-gradient(270deg,#DF8908 10%, #B415FF 100%);
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.nav-connect{
+
+.nav-connect {
     padding: 20px 40px;
     border-radius: 50px;
-    background: linear-gradient(267deg,#DA7C25 0.36%,#B923E1 102.06%);
+    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
     font-size: 22px;
     cursor: pointer;
     transition: 0.5s;
 }
 
-.nav-connect:hover{
+.nav-connect:hover {
     transform: scale(1.05);
 }
-.nav-menu li{
+
+.nav-menu li {
     display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
 }
 
-.nav-menu li img{
+.nav-menu li img {
     display: flex;
     margin: auto;
 }
 
-.anchor-link{
+.anchor-link {
     text-decoration: none;
     color: white;
 }
+
 .nav-mob-close {
     display: none;
 }
 
-.nav-mob-open{
+.nav-mob-open {
     display: none;
 }
 
-@media(max-width: 768px) {
+/* Media Queries for Responsiveness */
+
+/* 1. Large Screens and Desktops (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .navbar {
+        margin: 20px 100px;
+    }
+
+    .nav-menu {
+        gap: 50px;
+        font-size: 18px;
+    }
+
+    .name {
+        font-size: 45px;
+    }
+
+    .nav-connect {
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+}
+
+/* 2. Tablets and Small Desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .navbar {
+        margin: 20px 80px;
+    }
+
+    .nav-menu {
+        gap: 40px;
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 40px;
+    }
+
+    .nav-connect {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+}
+
+/* 3. Large Phones and Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
     .navbar {
         margin: 20px 50px;
     }
+
     .nav-connect {
         display: none;
     }
+
     .nav-mob-open {
         display: block;
         position: fixed;
-        right: 30px;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+        font-size: 30px;
     }
-    .nav-mob-close {
-        display: block;
-        position: relative;
-        top: 30px;
-        left: 290px;
-        width: 30px;
-    }
+
     .nav-menu {
         position: fixed;
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
         top: 0;
-        gap: 30px;
+        gap: 20px;
         background-color: #1F0016;
-        width: 350px;
+        width: 80%;
+        max-width: 300px;
         height: 100%;
-        z-index: 2;
+        z-index: 10;
         transition: right 0.5s;
-        right: -350px; /* Initial position - offscreen */
+        right: -100%; /* Hidden by default */
+        padding: 20px;
+    }
+
+    .nav-menu.show {
+        right: 0; /* Show menu */
     }
 
     .nav-menu li {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+}
+
+/* 4. Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        margin: 10px 20px;
+    }
+
+    .name {
         font-size: 30px;
-        padding-left: 100px;
-        flex-direction: row;
-        gap: 20px;
+    }
+
+    .nav-menu li {
+        font-size: 18px;
+        padding-left: 15px;
+    }
+
+    .nav-mob-open {
+        right: 15px;
+        top: 15px;
+    }
+
+    .nav-menu {
+        width: 75%;
+        right: -75%; /* Adjust sidebar width for smaller screens */
+    }
+}
+
+/* 5. Extra Small Devices (max-width: 360px) */
+@media (max-width: 360px) {
+    .navbar {
+        margin: 5px 10px;
+    }
+
+    .name {
+        font-size: 25px;
+    }
+
+    .nav-menu li {
+        font-size: 16px;
+        padding-left: 10px;
+    }
+
+    .nav-mob-open {
+        right: 10px;
+        top: 10px;
+    }
+
+    .nav-menu {
+        width: 70%;
+        right: -70%; /* Adjust sidebar width for extra small screens */
     }
 }
