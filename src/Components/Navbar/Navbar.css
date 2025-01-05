@@ -3,87 +3,48 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 20px 170px;
+    margin: 20px 150px;
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 60px;
-    font-size: 20px;
-}
-
-.name {
-    font-size: 50px;
-    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.nav-connect {
-    padding: 20px 40px;
-    border-radius: 50px;
-    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
-    font-size: 22px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.nav-connect:hover {
-    transform: scale(1.05);
+    gap: 50px;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    background: none; /* Inline menu background */
+    position: relative;
+    width: auto;
+    height: auto;
+    box-shadow: none;
 }
 
 .nav-menu li {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
     cursor: pointer;
-}
-
-.nav-menu li img {
-    display: flex;
-    margin: auto;
 }
 
 .anchor-link {
     text-decoration: none;
     color: white;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.nav-mob-close {
-    display: none;
+.anchor-link:hover {
+    color: #DF8908;
 }
 
-.nav-mob-open {
-    display: none;
+.nav-mob-open, 
+.nav-mob-close, 
+.back-btn {
+    display: none; /* Hidden for larger screens */
 }
 
-/* Media Queries for Responsiveness */
+/* Responsive styles */
 
-/* 1. Large Screens and Desktops (max-width: 1200px) */
-@media (max-width: 1200px) {
-    .navbar {
-        margin: 20px 100px;
-    }
-
-    .nav-menu {
-        gap: 50px;
-        font-size: 18px;
-    }
-
-    .name {
-        font-size: 45px;
-    }
-
-    .nav-connect {
-        font-size: 20px;
-        padding: 15px 30px;
-    }
-}
-
-/* 2. Tablets and Small Desktops (max-width: 1024px) */
+/* Tablets and smaller screens (max-width: 1024px) */
 @media (max-width: 1024px) {
     .navbar {
         margin: 20px 80px;
@@ -91,27 +52,17 @@
 
     .nav-menu {
         gap: 40px;
+    }
+
+    .nav-menu li {
         font-size: 16px;
-    }
-
-    .name {
-        font-size: 40px;
-    }
-
-    .nav-connect {
-        font-size: 18px;
-        padding: 12px 25px;
     }
 }
 
-/* 3. Large Phones and Small Tablets (max-width: 768px) */
+/* Small screens and mobile devices (max-width: 768px) */
 @media (max-width: 768px) {
     .navbar {
-        margin: 20px 50px;
-    }
-
-    .nav-connect {
-        display: none;
+        margin: 20px;
     }
 
     .nav-mob-open {
@@ -121,82 +72,87 @@
         top: 20px;
         cursor: pointer;
         font-size: 30px;
+        color: white;
+        z-index: 15;
     }
 
     .nav-menu {
-        position: fixed;
         flex-direction: column;
         align-items: flex-start;
+        position: fixed;
         top: 0;
+        right: -100%;
         gap: 20px;
         background-color: #1F0016;
         width: 80%;
         max-width: 300px;
         height: 100%;
-        z-index: 10;
-        transition: right 0.5s;
-        right: -100%; /* Hidden by default */
         padding: 20px;
+        z-index: 10;
+        transition: right 0.5s ease;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
     }
 
     .nav-menu.show {
-        right: 0; /* Show menu */
+        right: 0;
     }
 
-    .nav-menu li {
-        font-size: 20px;
-        padding-left: 20px;
-    }
-}
-
-/* 4. Small Phones (max-width: 480px) */
-@media (max-width: 480px) {
-    .navbar {
-        margin: 10px 20px;
-    }
-
-    .name {
-        font-size: 30px;
+    .nav-mob-close, 
+    .back-btn {
+        display: block;
+        background: transparent;
+        color: white;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        font-weight: bold;
+        padding: 10px;
     }
 
     .nav-menu li {
         font-size: 18px;
-        padding-left: 15px;
+        padding-left: 10px;
+    }
+}
+
+/* Extra small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        margin: 10px;
+    }
+
+    .nav-menu {
+        width: 75%;
+        right: -75%;
+    }
+
+    .nav-menu li {
+        font-size: 16px;
     }
 
     .nav-mob-open {
         right: 15px;
         top: 15px;
     }
-
-    .nav-menu {
-        width: 75%;
-        right: -75%; /* Adjust sidebar width for smaller screens */
-    }
 }
 
-/* 5. Extra Small Devices (max-width: 360px) */
+/* Ultra small screens (max-width: 360px) */
 @media (max-width: 360px) {
     .navbar {
-        margin: 5px 10px;
+        margin: 5px;
     }
 
-    .name {
-        font-size: 25px;
+    .nav-menu {
+        width: 70%;
+        right: -70%;
     }
 
     .nav-menu li {
-        font-size: 16px;
-        padding-left: 10px;
+        font-size: 14px;
     }
 
     .nav-mob-open {
         right: 10px;
         top: 10px;
-    }
-
-    .nav-menu {
-        width: 70%;
-        right: -70%; /* Adjust sidebar width for extra small screens */
     }
 }
